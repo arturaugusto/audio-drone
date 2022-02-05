@@ -10,7 +10,7 @@ opt-level = 'z' # turn on maximum optimizations. We only have 64kB
 lto = true      # Link-time-optimizations for further size reduction
 
 [dependencies]
-embedded-hal = "0.2.3"
+embedded-hal = "0.2.4"
 nb = "0.1.2"
 cortex-m = "^0.6.3"      # Access to the generic ARM peripherals
 cortex-m-rt = "^0.6.12"  # Startup code for the ARM Core
