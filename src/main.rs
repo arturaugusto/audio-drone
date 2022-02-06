@@ -192,7 +192,7 @@ fn main() -> ! {
     
 
     const STEPPER_DELAY: u16 = 3u16;
-    const DETECTION_TRESH: f32 = 0.08;
+    const DETECTION_TRESH: f32 = 0.2;
     
     // let mut samples: [f32; N] = [0.0; N];
     let mut samples: [u16; N] = [0u16; N];
@@ -234,7 +234,7 @@ fn main() -> ! {
             stepper_2_on_rev = false;
         }
 
-        // // // ~ 1202 Hz
+        // ~ 1202 Hz
         let mut g_left = Goertzel::new(1400., 10000.);
         for x in samples {
             g_left_power = g_left.filter(x as f32);
@@ -247,7 +247,7 @@ fn main() -> ! {
             stepper_2_on_rev = true;
         }
 
-        // // ~ 1280 Hz
+        // ~ 1280 Hz
         let mut g_right = Goertzel::new(1600., 10000.);
         for x in samples {
             g_right_power = g_right.filter(x as f32);
@@ -260,7 +260,7 @@ fn main() -> ! {
             stepper_2_on_rev = false;
         }
 
-        // // 1372 Hz
+        // 1454 Hz
         let mut g_rev = Goertzel::new(1800., 10000.);
         for x in samples {
             g_rev_power = g_rev.filter(x as f32);
